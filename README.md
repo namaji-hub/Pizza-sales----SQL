@@ -17,8 +17,11 @@ This project collects and analyzes data related to pizza sales using four tables
 Database Schema
 
 Pizzas Table: Pizza ID, Pizza Type ID, Pizza Size, Price.
+
 Pizza Types Table: Pizza Type ID, Name, Category, Ingredients.
+
 Orders Table: Order ID, Order Date, Order Time.
+
 Order Details Table: Order Detail ID, Order ID, Pizza ID, Quantity.
 
 
