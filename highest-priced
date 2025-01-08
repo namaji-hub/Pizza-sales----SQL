@@ -1,0 +1,16 @@
+select 
+    t.name,
+    p.price
+from 
+    pizzas p,
+    pizza_types t
+where 
+    p.pizza_type_id= t.pizza_type_id
+order by 
+    price desc
+FETCH FIRST 1 ROWS ONLY;
+/*
+RESULT:-
+NAME                PRICE
+The Greek Pizza     35.95
+ */ 
