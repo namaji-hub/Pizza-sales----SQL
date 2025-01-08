@@ -1,0 +1,18 @@
+select 
+    p.pizza_size, 
+    sum(d.quantity) as total_size
+from 
+    pizzas p,
+    order_details d
+where 
+    p.pizza_id = d.pizza_id
+group by 
+    p.pizza_size
+order by 
+    total_size desc
+fetch first 1 row only;
+/*
+RESULT :-
+PIZZA_SIZE  TOTAL_SIZE
+L           18956
+ */
