@@ -1,0 +1,21 @@
+select 
+    t.category, 
+    sum(d.quantity) as count
+from 
+    order_details d 
+join 
+    pizzas p ON d.pizza_id = p.pizza_id
+join 
+    pizza_types t on t.pizza_type_id = p.pizza_type_id
+group by 
+    t.category
+order by 
+    count desc;
+/*
+result :-
+CATEGORY COUNT
+Classic	14888
+Supreme	11987
+Veggie	11649
+Chicken	11050
+*/
