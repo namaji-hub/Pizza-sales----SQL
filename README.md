@@ -10,12 +10,12 @@ The Pizza Sales Analysis project focuses on analyzing pizza order data to derive
 I developed a sales data analysis project using Oracle SQL Developer to derive actionable insights. The database consisted of four relational tables: Pizzas, Pizza Types, Orders, and Order Details. This project focused on optimizing queries and analyzing trends for improved decision-making.
 
 
-Project Overview
+**Project Overview**
 
 This project collects and analyzes data related to pizza sales using four tables: Pizzas, Pizza Types, Orders, and Order Details. It computes various metrics like total orders, revenue, pizza sizes, categories, and distribution. The analysis helps identify trends, popular pizza types, and customer preferences.
 
 
-Database Schema
+**Database Schema**
 
 Pizzas Table: Pizza ID, Pizza Type ID, Pizza Size, Price.
 
@@ -26,7 +26,7 @@ Orders Table: Order ID, Order Date, Order Time.
 Order Details Table: Order Detail ID, Order ID, Pizza ID, Quantity.
 
 
-Data Cleaning and Preparation
+**Data Cleaning and Preparation**
 
 Before analysis, data must be cleaned and prepared. This involves:
 Removing duplicates
@@ -35,7 +35,7 @@ Formatting data consistently
 Proper preparation enhances the reliability of SQL queries and the insights derived from them.
 
 
-Advanced SQL Techniques
+**Advanced SQL Techniques**
 
 Use of aggregation functions: COUNT, SUM, AVG, and ROUND.
 Filtering data with WHERE clauses.
@@ -44,7 +44,7 @@ Grouping data with GROUP BY.
 Advanced techniques: RANK, PARTITION, and window functions (OVER).
 
 
-Strategic Recommendations
+**Strategic Recommendations**
 
 Based on our analysis, strategic recommendations include:-
 Adjusting menu offerings to highlight popular pizza types.
@@ -53,7 +53,7 @@ Optimizing pricing strategies based on revenue trends.
 Data-driven decisions enhance customer satisfaction and increase sales.
 
 
-Challenges in Data Analysis
+**Challenges in Data Analysis**
 
 Challenges encountered:-
 Data quality issues
@@ -62,6 +62,6 @@ Advanced analytical skill requirements
 Addressing these challenges ensures successful data-driven decision-making.
 
 
-Conclusion and Future Directions
+**Conclusion and Future Directions**
 
 This project utilized Oracle SQL Developer to analyze pizza sales trends effectively. Advanced SQL queries provided actionable insights, demonstrating the power of data-driven strategies to support informed decision-making and future growth.
