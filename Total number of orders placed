@@ -1,0 +1,9 @@
+select 
+    count(order_id) as total_orders 
+from 
+    orders;
+/*
+RESULT :-
+TOTAL_ORDERS
+21350
+*/
