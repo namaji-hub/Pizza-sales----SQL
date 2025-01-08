@@ -1,0 +1,83 @@
+with pizza_amount
+as
+(
+select 
+    t.name, 
+    sum(p.price*d.quantity) as amount
+from 
+    pizzas p
+join 
+    order_details d on p.pizza_id=d.pizza_id
+join 
+    pizza_types t on p.pizza_type_id=t.pizza_type_id
+group by 
+    p.pizza_type_id,
+    t.name
+order by 
+    amount desc
+    )
+,
+pizza_total as 
+(select 
+    sum(amount) total 
+from pizza_amount
+)
+select a.name,round((a.amount/t.total*100),2) as percentage from 
+pizza_amount a
+cross join pizza_total t;
+
+------------------or----------------------------------------------
+select 
+    t.name, 
+    round((sum(p.price*d.quantity)/( select sum(d.quantity*p.price) as total_sales
+from
+    order_details d,
+    pizzas p
+where d.pizza_id= p.pizza_id))*100,2) as amount
+from 
+    pizzas p
+join 
+    order_details d on p.pizza_id=d.pizza_id
+join 
+    pizza_types t on p.pizza_type_id=t.pizza_type_id
+group by 
+    p.pizza_type_id,
+    t.name
+order by 
+    amount desc;
+/*
+RESULT:-
+NAME                                        PERCENTAGE
+The Thai Chicken Pizza	                    5.31
+The Barbecue Chicken Pizza	                5.23
+The California Chicken Pizza	            5.06
+The Classic Deluxe Pizza	                4.67
+The Spicy Italian Pizza	                    4.26
+The Southwest Chicken Pizza	                4.24
+The Italian Supreme Pizza	                4.09
+The Hawaiian Pizza	                        3.95
+The Four Cheese Pizza	                    3.95
+The Sicilian Pizza	                        3.78
+The Pepperoni Pizza	                        3.69
+The Greek Pizza	                            3.48
+The Mexicana Pizza	                        3.27
+The Five Cheese Pizza	                    3.19
+The Pepper Salami Pizza	                    3.12
+The Italian Capocollo Pizza	                3.07
+The Vegetables + Vegetables Pizza	        2.98
+The Prosciutto and Arugula Pizza	        2.96
+The Napolitana Pizza	                    2.95
+The Spinach and Feta Pizza	                2.85
+The Big Meat Pizza	                        2.81
+The Pepperoni, Mushroom, and Peppers Pizza	2.3
+The Chicken Alfredo Pizza	                2.07
+The Chicken Pesto Pizza	                    2.04
+The Soppressata Pizza	                    2.01
+The Italian Vegetables Pizza	            1.96
+The Calabrese Pizza	                        1.95
+The Spinach Pesto Pizza	                    1.91
+The Mediterranean Pizza	                    1.88
+The Spinach Supreme Pizza	                1.87
+The Green Garden Pizza	                    1.71
+The Brie Carre Pizza	                    1.42
+*/
