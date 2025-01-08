@@ -1,0 +1,27 @@
+select * from orders;
+SELECT 
+    TO_CHAR(TO_DATE(order_time, 'HH24:MI:SS'), 'HH24') AS hour,
+    count(order_id) as count
+FROM 
+    orders
+group by 
+    TO_CHAR(TO_DATE(order_time, 'HH24:MI:SS'), 'HH24');
+/*
+RESULT :-
+HOUR COUNT
+11	1231
+12	2520
+13	2455
+14	1472
+15	1468
+16	1920
+17	2336
+18	2399
+19	2009
+20	1642
+21	1198
+22	663
+23	28
+10	8
+09	1
+*/
