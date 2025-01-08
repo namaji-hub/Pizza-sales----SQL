@@ -1,0 +1,22 @@
+select 
+    t.name, 
+    round(sum(p.price*d.quantity),0) as amount
+from 
+    pizzas p
+join 
+    order_details d on p.pizza_id=d.pizza_id
+join 
+    pizza_types t on p.pizza_type_id=t.pizza_type_id
+group by 
+    p.pizza_type_id,
+    t.name
+order by 
+    amount desc
+fetch first 3 row only;
+/*
+RESULT:-
+NAME                        AMOUNT
+The Thai Chicken Pizza	    43434
+The Barbecue Chicken Pizza	42768
+The California Chicken Pizza 41410
+*/
