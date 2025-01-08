@@ -1,0 +1,76 @@
+with a as 
+(select 
+    t.category,
+    t.name,
+    sum(p.price*d.quantity) as revenue
+from 
+    pizzas p
+join 
+    order_details d on p.pizza_id=d.pizza_id
+join 
+    pizza_types t on p.pizza_type_id=t.pizza_type_id
+group by 
+    t.name,
+    t.category
+order by 
+    revenue desc),
+b as
+(select 
+    a.category, 
+    a.name, 
+    a.revenue, 
+    rank() over( PARTITION by a.category order by a.revenue desc) as rank
+from a)
+select 
+    b.name,
+    b.revenue, 
+    b.rank
+from b
+where rank <= 3;
+
+--------------------or----------------------------------------
+select name,revenue,rank
+from
+    (
+    select 
+        category, 
+        name, 
+        revenue, 
+        rank() over( PARTITION by category order by revenue desc) as rank
+    from 
+        (
+        select 
+            t.category,
+            t.name,
+            sum(p.price*d.quantity) as revenue
+        from 
+            pizzas p
+        join 
+            order_details d on p.pizza_id=d.pizza_id
+        join 
+            pizza_types t on p.pizza_type_id=t.pizza_type_id
+        group by 
+            t.name,
+            t.category
+        order by 
+            revenue desc 
+        ) 
+    )
+where 
+    rank <= 3;
+/*
+RESULT:-
+NAME                            REVENUE    RANK
+The Thai Chicken Pizza      	43434.25	1
+The Barbecue Chicken Pizza	    42768	    2
+The California Chicken Pizza	41409.5	    3
+The Classic Deluxe Pizza	    38180.5	    1
+The Hawaiian Pizza	            32273.25	2
+The Pepperoni Pizza	            30161.75	3
+The Spicy Italian Pizza	        34831.25	1
+The Italian Supreme Pizza	    33476.75	2
+The Sicilian Pizza	            30940.5	    3
+The Four Cheese Pizza	        32265.7	    1
+The Mexicana Pizza	            26780.75	2
+The Five Cheese Pizza	        26066.5 	3
+*/
