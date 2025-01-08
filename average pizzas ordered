@@ -1,0 +1,13 @@
+select 
+    round(avg(sum(d.quantity)),2) as average
+from orders o,
+    order_details d
+where 
+    o.order_id=d.order_id
+group by 
+    o.order_date;
+/*
+RESULT :-
+AVERAGE
+138.47
+*/
