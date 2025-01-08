@@ -3,7 +3,7 @@
 
 Insights and Strategies Through Oracle SQL Developer
 
-Introduction to Pizza Sales Analysis
+**Introduction to Pizza Sales Analysis**
 
 The Pizza Sales Analysis project focuses on analyzing pizza order data to derive insights on sales patterns, popular pizza types, and revenue trends. It uses SQL queries to explore various business metrics such as total orders, revenue, and pizza preferences.
 
