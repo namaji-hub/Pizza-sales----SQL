@@ -1,3 +1,4 @@
+---Group the orders by date and calculate the average number of pizzas ordered per day.
 select 
     round(avg(sum(d.quantity)),2) as average
 from orders o,
