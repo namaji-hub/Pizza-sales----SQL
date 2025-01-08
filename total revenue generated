@@ -1,0 +1,12 @@
+select 
+    sum(d.quantity*p.price) as total_sales
+from
+    order_details d,
+    pizzas p
+where 
+    d.pizza_id= p.pizza_id;
+/*
+RESULT:-
+TOTAL_SALES
+817860.05
+*/
