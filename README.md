@@ -1,5 +1,7 @@
-**Pizza Sales Analysis Project
-**
+Pizza Sales Analysis Project
+
+
+
 Insights and Strategies Through Oracle SQL Developer
 
 Introduction to Pizza Sales Analysis
