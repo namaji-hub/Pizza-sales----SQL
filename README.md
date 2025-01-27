@@ -1,67 +1,66 @@
-**Pizza Sales Analysis Project**
+## **Pizza Sales Analysis Project**  
+**Insights and Strategies Through Oracle SQL Developer**
 
+### **Introduction**  
+The **Pizza Sales Analysis** project analyzes pizza order data to uncover insights on sales patterns, popular pizza types, and revenue trends. Using **Oracle SQL Developer**, SQL queries were written to compute business metrics such as total orders, revenue, and customer preferences, supporting strategic decision-making.
 
-Insights and Strategies Through Oracle SQL Developer
+### **Project Overview**  
+This project analyzes pizza sales data stored in four relational tables:  
+- **Pizzas:** Pizza details (ID, type, size, price).  
+- **Pizza Types:** Information about pizza categories and ingredients.  
+- **Orders:** Order date and time details.  
+- **Order Details:** Specifics like quantity and pizza type per order.  
 
-**Introduction to Pizza Sales Analysis**
+By deriving metrics like revenue and trends, the project aims to improve sales and customer satisfaction.
 
-The Pizza Sales Analysis project focuses on analyzing pizza order data to derive insights on sales patterns, popular pizza types, and revenue trends. It uses SQL queries to explore various business metrics such as total orders, revenue, and pizza preferences.
+### **Database Schema**  
+1. **Pizzas Table:**  
+   - Columns: Pizza ID, Pizza Type ID, Pizza Size, Price.  
 
-I developed a sales data analysis project using Oracle SQL Developer to derive actionable insights. The database consisted of four relational tables: Pizzas, Pizza Types, Orders, and Order Details. This project focused on optimizing queries and analyzing trends for improved decision-making.
+2. **Pizza Types Table:**  
+   - Columns: Pizza Type ID, Name, Category, Ingredients.  
 
+3. **Orders Table:**  
+   - Columns: Order ID, Order Date, Order Time.  
 
-**Project Overview**
+4. **Order Details Table:**  
+   - Columns: Order Detail ID, Order ID, Pizza ID, Quantity.  
 
-This project collects and analyzes data related to pizza sales using four tables: Pizzas, Pizza Types, Orders, and Order Details. It computes various metrics like total orders, revenue, pizza sizes, categories, and distribution. The analysis helps identify trends, popular pizza types, and customer preferences.
+### **Data Cleaning and Preparation**  
+To ensure accurate analysis, the following steps were taken:  
+- **Duplicate removal** to maintain data integrity.  
+- **Error correction** for consistency.  
+- **Standardized formatting** for uniformity in the database.  
 
+Proper preparation allowed reliable and actionable SQL queries.  
 
-**Database Schema**
+### **Advanced SQL Techniques Used**  
+1. **Aggregation Functions:**  
+   - COUNT, SUM, AVG, and ROUND for computing metrics.  
 
-Pizzas Table: Pizza ID, Pizza Type ID, Pizza Size, Price.
+2. **Filtering:**  
+   - WHERE clauses to isolate relevant data.  
 
-Pizza Types Table: Pizza Type ID, Name, Category, Ingredients.
+3. **Joins and Grouping:**  
+   - JOIN operations to link tables.  
+   - GROUP BY clauses for summarizing data.  
 
-Orders Table: Order ID, Order Date, Order Time.
+4. **Advanced Functions:**  
+   - Window functions like RANK and PARTITION for detailed trend analysis.  
 
-Order Details Table: Order Detail ID, Order ID, Pizza ID, Quantity.
+### **Strategic Recommendations**  
+From the insights derived, the following actions are suggested:  
+- **Highlight popular pizza types** to boost revenue.  
+- **Launch targeted marketing campaigns** for specific customer segments.  
+- **Optimize pricing strategies** based on sales trends.  
 
+### **Challenges and Solutions**  
+1. **Data Quality Issues:** Addressed through cleaning and validation processes.  
+2. **Integration of Data Sources:** Mapped relationships using JOIN operations.  
+3. **Advanced Analysis Skills:** Leveraged SQL techniques to overcome complexities.  
 
-**Data Cleaning and Preparation**
+### **Conclusion and Future Directions**  
+This project demonstrates the ability to uncover actionable insights through **SQL-based data analysis** using **Oracle SQL Developer**. By identifying revenue opportunities and customer preferences, the analysis supports informed business strategies.  
+Future plans include expanding the dataset and incorporating predictive analytics for forecasting trends.
 
-Before analysis, data must be cleaned and prepared. This involves:
-Removing duplicates
-Correcting errors
-Formatting data consistently
-Proper preparation enhances the reliability of SQL queries and the insights derived from them.
-
-
-**Advanced SQL Techniques**
-
-Use of aggregation functions: COUNT, SUM, AVG, and ROUND.
-Filtering data with WHERE clauses.
-Combining tables using JOIN operations.
-Grouping data with GROUP BY.
-Advanced techniques: RANK, PARTITION, and window functions (OVER).
-
-
-**Strategic Recommendations**
-
-Based on our analysis, strategic recommendations include:-
-Adjusting menu offerings to highlight popular pizza types.
-Designing targeted marketing campaigns.
-Optimizing pricing strategies based on revenue trends.
-Data-driven decisions enhance customer satisfaction and increase sales.
-
-
-**Challenges in Data Analysis**
-
-Challenges encountered:-
-Data quality issues
-Integration of disparate data sources
-Advanced analytical skill requirements
-Addressing these challenges ensures successful data-driven decision-making.
-
-
-**Conclusion and Future Directions**
-
-This project utilized Oracle SQL Developer to analyze pizza sales trends effectively. Advanced SQL queries provided actionable insights, demonstrating the power of data-driven strategies to support informed decision-making and future growth.
+---
